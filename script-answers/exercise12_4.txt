@@ -1,0 +1,11 @@
+root@d3a4c7b7efe1:/# nano /usr/src/app/index.js 
+root@d3a4c7b7efe1:/# nano -v
+root@d3a4c7b7efe1:/# nano --version
+ GNU nano, version 7.2
+ (C) 2023 the Free Software Foundation and various contributors
+ Compiled options: --disable-libmagic --enable-utf8
+root@d3a4c7b7efe1:/# node --version
+v20.19.5
+root@d3a4c7b7efe1:/# node /usr/src/app/index.js 
+Hello World
+root@d3a4c7b7efe1:/# 
