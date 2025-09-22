@@ -1,0 +1,11 @@
+Thiwankas-MacBook-Air:script-answers thiwankas$ docker run -it ubuntu bash
+root@d3a4c7b7efe1:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@d3a4c7b7efe1:/# mkdir -p /usr/src/app
+root@d3a4c7b7efe1:/# touch /usr/src/app/index.js
+root@d3a4c7b7efe1:/# cd /usr/src/app/
+root@d3a4c7b7efe1:/usr/src/app# ls
+index.js
+root@d3a4c7b7efe1:/usr/src/app# exit
+exit
+Thiwankas-MacBook-Air:script-answers thiwankas$
