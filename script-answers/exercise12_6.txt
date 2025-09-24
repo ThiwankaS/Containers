@@ -1,0 +1,15 @@
+Thiwankas-MacBook-Air:todo-backend thiwankas$ touch docker-compose.yml
+Thiwankas-MacBook-Air:todo-backend thiwankas$ docker compose up
+[+] Running 2/2
+ ⠿ Network todo-backend_default  Created                                   0.1s
+ ⠿ Container todo-backend-app-1  Created                                   0.1s
+Attaching to todo-backend-app-1
+todo-backend-app-1  | 
+todo-backend-app-1  | > todo-express-backend@0.0.0 start
+todo-backend-app-1  | > node ./bin/www
+todo-backend-app-1  | 
+todo-backend-app-1  | GET / 200 10.023 ms - 12
+todo-backend-app-1  | GET / 200 1.793 ms - 12
+todo-backend-app-1  | GET / 200 0.783 ms - 12
+todo-backend-app-1 exited with code 137
+Thiwankas-MacBook-Air:todo-backend thiwankas$
