@@ -1,0 +1,27 @@
+Thiwankas-MacBook-Air:todo-backend thiwankas$ ls
+README.md		mongo			package.json		util
+app.js			node_modules		redis
+bin			package-lock.json	routes
+Thiwankas-MacBook-Air:todo-backend thiwankas$ touch Dockerfile .dockerignore
+Thiwankas-MacBook-Air:todo-backend thiwankas$ docker build -t todo-backend . && docker run -p 3125:3000 todo-backend 
+[+] Building 19.7s (9/9) FINISHED                                                                                  
+ => [internal] load build definition from Dockerfile                                                          0.1s
+ => => transferring dockerfile: 150B                                                                          0.0s
+ => [internal] load .dockerignore                                                                             0.0s
+ => => transferring context: 88B                                                                              0.0s
+ => [internal] load metadata for docker.io/library/node:20                                                    0.0s
+ => CACHED [1/4] FROM docker.io/library/node:20                                                               0.0s
+ => [internal] load build context                                                                             2.7s
+ => => transferring context: 12.24MB                                                                          2.7s
+ => [2/4] WORKDIR /usr/src/app/backend                                                                        0.2s
+ => [3/4] COPY --chown=node:node . .                                                                          1.2s
+ => [4/4] RUN npm ci                                                                                         14.6s
+ => exporting to image                                                                                        0.9s
+ => => exporting layers                                                                                       0.9s
+ => => writing image sha256:23362335cb36634347ff826790b4fc90e7ded2b2f5c7905d1ac2b23e8d47e55e                  0.0s 
+ => => naming to docker.io/library/todo-backend                                                               0.0s 
+                                                                                                                   
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them               
+
+> todo-express-backend@0.0.0 start
+> node ./bin/www
