@@ -1,0 +1,14 @@
+Thiwankas-MacBook-Air:todo-backend thiwankas$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                     NAMES
+149e99db8530   mongo     "docker-entrypoint.s…"   9 minutes ago   Up 9 minutes   0.0.0.0:3456->27017/tcp   todo-backend-mongo-1
+32fb547d81ec   redis     "docker-entrypoint.s…"   9 minutes ago   Up 9 minutes   0.0.0.0:6969->6379/tcp    todo-backend-redis-1
+Thiwankas-MacBook-Air:todo-backend thiwankas$ docker exec -it todo-backend-redis-1 redis-cli
+127.0.0.1:6379> KEYS *
+1) "added_todos"
+127.0.0.1:6379> GET "added_todos"
+"0"
+127.0.0.1:6379> SET "added_todos" "9001"
+OK
+127.0.0.1:6379> GET "added_todos"
+"9001"
+127.0.0.1:6379> 
