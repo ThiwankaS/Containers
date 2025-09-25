@@ -1,5 +1,7 @@
 const express = require('express');
-const { Todo } = require('../mongo')
+const { Todo } = require('../mongo');
+const { increment } = require('../redis/index');
+const { getCount } = require('../redis/index');
 const router = express.Router();
 
 /* GET todos listing. */
@@ -14,6 +16,7 @@ router.post('/', async (req, res) => {
     text: req.body.text,
     done: false
   })
+  await increment();
   res.send(todo);
 });
 
@@ -53,6 +56,5 @@ singleRouter.put('/', async (req, res) => {
 });
 
 router.use('/:id', findByIdMiddleware, singleRouter)
-
 
 module.exports = router;

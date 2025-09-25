@@ -1,4 +1,4 @@
-const redis = require('redis')
+const redis = require('redis');
 const { promisify } = require('util')
 const { REDIS_URL } = require('../util/config')
 
@@ -21,7 +21,34 @@ if (!REDIS_URL) {
   setAsync = promisify(client.set).bind(client)    
 }
 
+const KEY = 'added_todos';
+
+async function getCount() {
+  try {
+    let rawValue = await getAsync(KEY);
+    let numericValue = Number(rawValue);
+    return Number.isFinite(numericValue) ? numericValue : 0 ;
+  } catch (e) {
+    console.error("get count error ", e);
+    return 0;
+  }
+}
+
+async function increment() {
+  try {
+    let currentValue = await getAsync('added_todos');
+    let updatedValue = Number(currentValue) + 1;
+    await setAsync(KEY, String(updatedValue));
+    return updatedValue;
+  } catch (e) {
+    console.error("increment error ", e);
+    return null;
+  }
+}
+
 module.exports = {
   getAsync,
-  setAsync
+  setAsync,
+  getCount,
+  increment
 }
